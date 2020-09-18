@@ -62,3 +62,12 @@ pkcs11
 
 10_00
 # <----- constant.numeric.integer.decimal.elvish
+
+_
+# <- - constant.numeric.integer.decimal.elvish
+
+3_
+# <-- - constant.numeric.integer.decimal.elvish
+
+_3
+# <-- - constant.numeric.integer.decimal.elvish

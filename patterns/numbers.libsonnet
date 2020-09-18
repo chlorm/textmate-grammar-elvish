@@ -30,6 +30,8 @@ local behind =
 // a second range period so that integers still work in ranges.
 local ahead = '(?!' + '[.](?![.])' + '|' + std.strReplace(common.bareChar, '.', '') + '|[>])';
 local sign = '[+-]?';
+// Disallow leading and trailing underscores.
+local digit = '(?:[\\d]|(?<=[\\d])[_](?=[\\d]))+';
 
 // TODO: binary, octal, scientific, Inf, NaN, underscores
 
@@ -51,10 +53,10 @@ textmate.repository.new(constantNumericFloatDecimal)
     '(' +
     sign + '(?:' +
     /* ?.0 */
-    '([\\d_]+)?\\.[\\d_]+' +
+    '(?:' + digit + ')?\\.' + digit +
     '|' +
     /* 0.? */
-    '[\\d_]+\\.([\\d_]+)?' +
+    digit + '\\.(?:' + digit + ')?' +
     ')' +
     ')' + ahead
   )
@@ -67,7 +69,7 @@ textmate.repository.new(constantNumericFloatDecimal)
 textmate.repository.new(constantNumericIntegerDecimal)
 .Pattern(
   textmate.pattern.new()
-  .Match(behind + sign + '[\\d_]+' + ahead)
+  .Match(behind + sign + digit + ahead)
   .Name(textmate.scope.constantNumericIntegerDecimal + scope)
 )
 +
