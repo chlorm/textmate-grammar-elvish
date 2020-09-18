@@ -1,0 +1,24 @@
+name: ci
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  style-jsonnet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Enforce style guide
+        uses: chlorm/ci-jsonnet-style@master
+  lint-jsonnet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Lint jsonnet files
+        uses: chlorm/ci-jsonnet-lint@master

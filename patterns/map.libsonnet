@@ -13,7 +13,7 @@
 // limitations under the License.
 
 local common = import '../common.libsonnet';
-local textmate = import 'jsonnet-textmate-grammer/textmate.libsonnet';
+local textmate = import 'github.com/chlorm/jsonnet-textmate-grammar/textmate.libsonnet';
 
 local scope = '.elvish';
 

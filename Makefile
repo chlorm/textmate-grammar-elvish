@@ -7,10 +7,10 @@ build-deps:
 
 build: build-deps
 	$(JSONNET_CMD) \
-	  --jpath /home/cwopel/Projects/ \
-	  --multi . \
-	  --string \
-	  elvish.jsonnet
+		--jpath vendor/ \
+		--multi . \
+		--string \
+		elvish.jsonnet
 
 test-deps:
 	test -x $$(type -P ./node_modules/.bin/vscode-tmgrammar-test)

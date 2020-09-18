@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-local textmate = import 'jsonnet-textmate-grammer/textmate.libsonnet';
-
 {
   bareChar:: '[a-zA-Z0-9_!%+,/@\\:.-]',
   bareWord:: self.bareChar + '+',
