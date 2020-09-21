@@ -58,7 +58,7 @@ textmate.repository.new(builtinVariables)
 textmate.repository.new(variableAccess)
 .Pattern(
   textmate.pattern.new()
-  .Match('(\\$)(@?)(' + common.bareWord + ')([~?]|[.][.][.])?')
+  .Match('(\\$)(@?)(' + common.bareWord + ')([~])?')
   .Capture(
     textmate.capture.new(1)
     .Name(textmate.scope.punctuationDefinitionVariable + scope)
