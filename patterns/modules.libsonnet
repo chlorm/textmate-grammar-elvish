@@ -20,9 +20,12 @@ local builtinNamespace = 'builtinNamespace';
 local namespaces = 'namespaces';
 local use = 'use';
 
+// TODO: local: up: storage.modifier
+
 local builtinNamespaces = [
   'builtin',
-  'E',
+  'e',
+  'E',  // FIXME: storage.modifier
   'edit',
   'epm',
   'math',
