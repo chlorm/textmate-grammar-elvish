@@ -65,7 +65,7 @@ textmate.repository.new(stringQuotedDouble)
         /* Single character escapes */
         '[\\"\\\\abfnrtv]',
         /* Octal */
-        '[0-7][0-7][0-7]',
+        '[0-7]{3}',
         /* Unicode code point */
         '[c^].',
         /* Unicode code point 2 digit hex */

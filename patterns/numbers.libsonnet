@@ -24,7 +24,7 @@ local constantNumericIntegerOctal = 'constantNumericIntegerOctal';
 
 local behind =
   '(?:' +
-  '(?<=[.][.])' +
+  '(?<=[.]{2})' +
   '|' +
   '(?<!' + common.bareChar + ')' +
   ')';
