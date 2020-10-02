@@ -61,7 +61,7 @@ textmate.repository.new(constantNumericFloatDecimal)
 textmate.repository.new(constantNumericIntegerBinary)
 .Pattern(
   textmate.pattern.new()
-  .Match(behind + '(' + sign + '0[bB][0-9]{1,8})' + ahead)
+  .Match(behind + '(' + sign + '0[bB][0-1]+)' + ahead)
   .Capture(
     textmate.capture.new(1)
     .Name(textmate.scope.constantNumericIntegerBinary + scope)

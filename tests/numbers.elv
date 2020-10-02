@@ -60,6 +60,12 @@ pkcs11
 {0xaaaa}
 # <~------ constant.numeric.integer.hexidecimal.elvish
 
+0o072
+# <----- constant.numeric.integer.octal.elvish
+
+0b0110
+# <------ constant.numeric.integer.binary.elvish
+
 10_00
 # <----- constant.numeric.integer.decimal.elvish
 
