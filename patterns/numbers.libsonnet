@@ -71,8 +71,11 @@ textmate.repository.new(constantNumericIntegerBinary)
 textmate.repository.new(constantNumericIntegerDecimal)
 .Pattern(
   textmate.pattern.new()
-  .Match(behind + sign + digit + ahead)
-  .Name(textmate.scope.constantNumericIntegerDecimal + scope)
+  .Match(behind + '(' + sign + digit + ')' + ahead)
+  .Capture(
+    textmate.capture.new(1)
+    .Name(textmate.scope.constantNumericIntegerDecimal + scope)
+  )
 )
 +
 textmate.repository.new(constantNumericIntegerHexadecimal)
