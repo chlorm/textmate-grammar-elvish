@@ -17,8 +17,10 @@ local textmate = import 'github.com/chlorm/jsonnet-textmate-grammar/textmate.lib
 
 local scope = '.elvish';
 local constantNumericFloatDecimal = 'constantNumericFloatDecimal';
+local constantNumericIntegerBinary = 'constantNumericIntegerBinary';
 local constantNumericIntegerDecimal = 'constantNumericIntegerDecimal';
 local constantNumericIntegerHexadecimal = 'constantNumericIntegerHexadecimal';
+local constantNumericIntegerOctal = 'constantNumericIntegerOctal';
 
 local behind =
   '(?:' +
@@ -33,7 +35,7 @@ local sign = '[+-]?';
 // Disallow leading and trailing underscores.
 local digit = '(?:[\\d]|(?<=[\\d])[_](?=[\\d]))+';
 
-// TODO: binary, octal, scientific, Inf, NaN, underscores
+// TODO: scientific, Inf, NaN, underscores
 
 textmate.repository.new(constantNumericFloatDecimal)
 .Pattern(
@@ -56,6 +58,16 @@ textmate.repository.new(constantNumericFloatDecimal)
   )
 )
 +
+textmate.repository.new(constantNumericIntegerBinary)
+.Pattern(
+  textmate.pattern.new()
+  .Match(behind + '(' + sign + '0[bB][0-9]{1,8})' + ahead)
+  .Capture(
+    textmate.capture.new(1)
+    .Name(textmate.scope.constantNumericIntegerBinary + scope)
+  )
+)
++
 textmate.repository.new(constantNumericIntegerDecimal)
 .Pattern(
   textmate.pattern.new()
@@ -73,10 +85,22 @@ textmate.repository.new(constantNumericIntegerHexadecimal)
   )
 )
 +
+textmate.repository.new(constantNumericIntegerOctal)
+.Pattern(
+  textmate.pattern.new()
+  .Match(behind + '(' + sign + '0[oO][0-7]{3})' + ahead)
+  .Capture(
+    textmate.capture.new(1)
+    .Name(textmate.scope.constantNumericIntegerOctal + scope)
+  )
+)
++
 textmate.repository.new(common.id.numbers)
 .Pattern(
   textmate.pattern.new()
+  .Pattern(textmate.pattern.new().Include(constantNumericIntegerBinary))
   .Pattern(textmate.pattern.new().Include(constantNumericIntegerHexadecimal))
+  .Pattern(textmate.pattern.new().Include(constantNumericIntegerOctal))
   .Pattern(textmate.pattern.new().Include(constantNumericFloatDecimal))
   .Pattern(textmate.pattern.new().Include(constantNumericIntegerDecimal))
 )
