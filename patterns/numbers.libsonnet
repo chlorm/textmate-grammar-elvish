@@ -35,16 +35,6 @@ local digit = '(?:[\\d]|(?<=[\\d])[_](?=[\\d]))+';
 
 // TODO: binary, octal, scientific, Inf, NaN, underscores
 
-textmate.repository.new(constantNumericIntegerHexadecimal)
-.Pattern(
-  textmate.pattern.new()
-  .Match(behind + '(' + sign + '0[xX][0-9a-fA-F]+)' + ahead)
-  .Capture(
-    textmate.capture.new(1)
-    .Name(textmate.scope.constantNumericIntegerHexadecimal + scope)
-  )
-)
-+
 textmate.repository.new(constantNumericFloatDecimal)
 .Pattern(
   textmate.pattern.new()
@@ -71,6 +61,16 @@ textmate.repository.new(constantNumericIntegerDecimal)
   textmate.pattern.new()
   .Match(behind + sign + digit + ahead)
   .Name(textmate.scope.constantNumericIntegerDecimal + scope)
+)
++
+textmate.repository.new(constantNumericIntegerHexadecimal)
+.Pattern(
+  textmate.pattern.new()
+  .Match(behind + '(' + sign + '0[xX][0-9a-fA-F]+)' + ahead)
+  .Capture(
+    textmate.capture.new(1)
+    .Name(textmate.scope.constantNumericIntegerHexadecimal + scope)
+  )
 )
 +
 textmate.repository.new(common.id.numbers)
