@@ -29,6 +29,7 @@ local builtinNamespaces = [
   'edit',
   'epm',
   'math',
+  'path',
   'platform',
   're',
   'readline-binding',

@@ -20,7 +20,7 @@ local keywordOperatorArithmetic = 'keywordOperatorArithmetic';
 local keywordOperatorComparison = 'keywordOperatorComparison';
 local keywordOperatorLogical = 'keywordOperatorLogical';
 local keywordOther = 'keywordOther';
-local keywordAssignment = 'keywordAssignment';
+local keywordOperatorAssignment = 'keywordOperatorAssignment';
 
 local operatorCommand(a) =
   '(?<!' + common.bareChar + '|[+*/&)\\]}])' + '(' + std.join('|', a) + ')\\s';
@@ -94,10 +94,12 @@ textmate.repository.new(keywordOther)
   )
 )
 +
-textmate.repository.new(keywordAssignment)
+textmate.repository.new(keywordOperatorAssignment)
 .Pattern(
   textmate.pattern.new()
-  .Match(operatorChar(['=']))
+  .Match(
+    '(' + operatorCommand(['set', 'var']) + '|' + operatorChar(['='],) + ')'
+  )
   .Capture(
     textmate.capture.new(1)
     .Name(textmate.scope.keywordOperatorAssignment + scope)
@@ -112,5 +114,5 @@ textmate.repository.new(common.id.operators)
   .Pattern(textmate.pattern.new().Include(keywordOperatorLogical))
   .Pattern(textmate.pattern.new().Include(keywordOther))
   // NOTE: must come after comparison operators
-  .Pattern(textmate.pattern.new().Include(keywordAssignment))
+  .Pattern(textmate.pattern.new().Include(keywordOperatorAssignment))
 )

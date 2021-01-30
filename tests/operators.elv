@@ -1,5 +1,9 @@
 # SYNTAX TEST "source.elvish" "operators"
 
+var x
+# <--- keyword.operator.assignment.elvish
+set x
+# <--- keyword.operator.assignment.elvish
 x = x
 # ^ keyword.operator.assignment.elvish
 
