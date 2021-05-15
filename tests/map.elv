@@ -28,6 +28,18 @@
 # <~-meta.brackets.elvish keyword.other.elvish
 # ^^^ meta.brackets.elvish variable.parameter.elvish
 #    ^ meta.brackets.elvish keyword.operator.assignment.elvish
+
+[E:ROOT]
+# <~- entity.name.namespace.elvish
+
+[$E:ROOT]
+# <~- punctuation.definition.variable.elvish
+# <~~- entity.name.namespace.elvish
+
+[&bool=$E:ROOT]
+#      ^ punctuation.definition.variable.elvish
+#       ^ entity.name.namespace.elvish
+
 [
   # Comment
 # ^ meta.brackets.elvish comment.line.number-sign.elvish punctuation.definition.comment.elvish
