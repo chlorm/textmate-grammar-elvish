@@ -28,6 +28,11 @@
 # <~-meta.brackets.elvish keyword.other.elvish
 # ^^^ meta.brackets.elvish variable.parameter.elvish
 #    ^ meta.brackets.elvish keyword.operator.assignment.elvish
+[
+  # Comment
+# ^ meta.brackets.elvish comment.line.number-sign.elvish punctuation.definition.comment.elvish
+#  ^^^^^^^^ meta.brackets.elvish comment.line.number-sign.elvish
+]
 
 &test
 # <- keyword.other.elvish
