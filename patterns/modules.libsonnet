@@ -28,6 +28,7 @@ local builtinNamespaces = [
   'E',  // FIXME: storage.modifier
   'edit',
   'epm',
+  'file',
   'math',
   'path',
   'platform',
