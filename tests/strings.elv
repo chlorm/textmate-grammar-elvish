@@ -43,9 +43,5 @@
 "x\U00000020x"
 # ^^^^^^^^^^ meta.string.elvish string.quoted.double.elvish constant.character.escape.elvish
 
-# FIXME: is this a valid escape
-"x\e]0;"
-## ^^ meta.string.elvish string.quoted.double.elvish constant.character.escape.elvish
-
 "x\yx"
 # ^^ - constant.character.escape.elvish
