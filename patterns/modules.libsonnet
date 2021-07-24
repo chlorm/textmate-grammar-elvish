@@ -29,6 +29,7 @@ local builtinNamespaces = [
   'edit',
   'epm',
   'file',
+  'local',
   'math',
   'path',
   'platform',
