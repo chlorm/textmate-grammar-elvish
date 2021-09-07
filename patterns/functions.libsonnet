@@ -62,6 +62,7 @@ local commands = [
   'peach',
   'pprint',
   'print',
+  'printf',
   'pprint',
   'put',
   'range',
