@@ -64,7 +64,6 @@ local commands = [
   'pprint',
   'print',
   'printf',
-  'pprint',
   'put',
   'range',
   'rand',
