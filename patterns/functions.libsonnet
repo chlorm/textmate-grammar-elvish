@@ -55,6 +55,7 @@ local commands = [
   'multi-error',
   'nop',
   'ns',
+  'num',
   'one',
   'only-bytes',
   'only-values',
