@@ -29,7 +29,6 @@ local commands = [
   'count',
   'del',
   'deprecate',
-  'dir-history',
   'dissoc',
   'drop',
   'each',
