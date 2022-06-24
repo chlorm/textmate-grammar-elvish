@@ -68,6 +68,7 @@ textmate.repository.new(keywordOperatorLogical)
   textmate.pattern.new()
   .Match(operatorCommand([
     'and',
+    'coalesce',
     'or',
     'not',
   ]))
