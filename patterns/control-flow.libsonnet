@@ -24,7 +24,7 @@ local keywords = [
   'while',
   'for',
   'try',
-  'except',
+  'catch',
   'finally',
   'return',
   'break',
