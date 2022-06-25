@@ -62,6 +62,7 @@ local commands = [
   'order',
   'peach',
   'pprint',
+  'pragma',
   'print',
   'printf',
   'put',
