@@ -53,6 +53,10 @@ not-eq
 ==s
 # <--- keyword.operator.comparison.elvish
 
+cmd1 | cmd2 | cmd3
+#    ^ keyword.other.elvish
+#           ^ keyword.other.elvish
+
 module:is
 #      ^^ - keyword.operator.comparison.elvish
 

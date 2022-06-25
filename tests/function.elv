@@ -1,20 +1,22 @@
 # SYNTAX TEST "source.elvish" "function"
 
-fn func []{}
+fn func {||}
 # <-- meta.function.elvish keyword.declaration.function.elvish
 #  ^^^^ meta.function.elvish entity.name.function.elvish
-#       ^ meta.function.elvish meta.brackets.elvish punctuation.section.brackets.begin.elvish
-#        ^ meta.function.elvish meta.brackets.elvish punctuation.section.brackets.end.elvish
-#         ^ meta.function.elvish meta.braces.elvish punctuation.section.braces.begin.elvish
+#       ^ meta.function.elvish meta.braces.elvish punctuation.section.braces.begin.elvish
+#        ^ meta.function.elvish meta.brackets.elvish punctuation.section.brackets.begin.elvish
+#         ^ meta.function.elvish meta.brackets.elvish punctuation.section.brackets.end.elvish
 #          ^ meta.function.elvish meta.braces.elvish punctuation.section.braces.end.elvish
 
 fn func {
-  fn func []{}
+  fn func {||}
 # ^^ meta.function.elvish keyword.declaration.function.elvish
 }
 
--fn func []{}
+-fn func {||}
 # <~-- - meta.function.elvish keyword.declaration.function.elvish
+
+fn func {|arg1 &arg2=$true| bareword}
 
 all
 # <--- support.function.elvish

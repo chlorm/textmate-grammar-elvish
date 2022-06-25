@@ -129,7 +129,6 @@ textmate.repository.new(functionDefinition)
   .End('(?<=})')
   .Pattern(
     textmate.pattern.new()
-    .Pattern(textmate.pattern.new().Include(common.id.map))
     .Pattern(textmate.pattern.new().Include(common.id.lambda))
   )
 )

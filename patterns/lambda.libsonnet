@@ -17,6 +17,38 @@ local textmate = import 'github.com/chlorm/jsonnet-textmate-grammar/textmate.lib
 
 local scope = '.elvish';
 
+local lambdaArgs = common.id.lambda + 'Args';
+
+textmate.repository.new(lambdaArgs)
+.Pattern(
+  textmate.pattern.new()
+  // FIXME: update scope names, figure out what to use
+  .Name(textmate.scope.metaBrackets + scope)
+  .Begin('(?<={(|[\\s]+]))\\|')
+  .BeginCapture(
+    textmate.capture.new(0)
+    // FIXME: update scope names, figure out what to use
+    .Name(textmate.scope.punctuationSectionBracketsBegin + scope)
+  )
+  .End('\\|')
+  .EndCapture(
+    textmate.capture.new(0)
+    // FIXME: update scope names, figure out what to use
+    .Name(textmate.scope.punctuationSectionBracketsEnd + scope)
+  )
+  // Match K/V before initialization character
+  .Pattern(textmate.pattern.new().Include(common.id.mapKeyValue))
+  .Pattern(textmate.pattern.new().Include(common.id.map))  // self
+  .Pattern(textmate.pattern.new().Include(common.id.commandSubstitution))
+  .Pattern(textmate.pattern.new().Include(common.id.lambda))
+  .Pattern(textmate.pattern.new().Include(common.id.numbers))
+  .Pattern(textmate.pattern.new().Include(common.id.operators))
+  .Pattern(textmate.pattern.new().Include(common.id.strings))
+  .Pattern(textmate.pattern.new().Include(common.id.modules))
+  .Pattern(textmate.pattern.new().Include(common.id.variables))
+  .Pattern(textmate.pattern.new().Include(common.id.comments))
+)
++
 textmate.repository.new(common.id.lambda)
 .Pattern(
   textmate.pattern.new()
@@ -32,6 +64,7 @@ textmate.repository.new(common.id.lambda)
     .Name(textmate.scope.punctuationSectionBracesEnd + scope)
   )
   .Pattern(textmate.pattern.new().Include(common.id.lambda))  // self
+  .Pattern(textmate.pattern.new().Include(lambdaArgs))
   .Pattern(textmate.pattern.new().Include(common.id.commandSubstitution))
   .Pattern(textmate.pattern.new().Include(common.id.comments))
   .Pattern(textmate.pattern.new().Include(common.id.controlFlow))
