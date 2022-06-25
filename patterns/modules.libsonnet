@@ -30,6 +30,7 @@ local builtinNamespaces = [
   'epm',
   'file',
   'math',
+  'minibuf',
   'path',
   'platform',
   're',
