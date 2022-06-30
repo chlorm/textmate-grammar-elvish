@@ -4,8 +4,8 @@ fn func {||}
 # <-- meta.function.elvish keyword.declaration.function.elvish
 #  ^^^^ meta.function.elvish entity.name.function.elvish
 #       ^ meta.function.elvish meta.braces.elvish punctuation.section.braces.begin.elvish
-#        ^ meta.function.elvish meta.brackets.elvish punctuation.section.brackets.begin.elvish
-#         ^ meta.function.elvish meta.brackets.elvish punctuation.section.brackets.end.elvish
+#        ^ meta.function.elvish meta.lambda.parameters.elvish punctuation.section.group.begin.elvish
+#         ^ meta.function.elvish meta.lambda.parameters.elvish punctuation.section.group.end.elvish
 #          ^ meta.function.elvish meta.braces.elvish punctuation.section.braces.end.elvish
 
 fn func {

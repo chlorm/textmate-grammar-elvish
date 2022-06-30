@@ -22,19 +22,16 @@ local lambdaArgs = common.id.lambda + 'Args';
 textmate.repository.new(lambdaArgs)
 .Pattern(
   textmate.pattern.new()
-  // FIXME: update scope names, figure out what to use
-  .Name(textmate.scope.metaBrackets + scope)
+  .Name(textmate.scope.meta + '.lambda.parameters' + scope)
   .Begin('(?<={(|[\\s]+]))\\|')
   .BeginCapture(
     textmate.capture.new(0)
-    // FIXME: update scope names, figure out what to use
-    .Name(textmate.scope.punctuationSectionBracketsBegin + scope)
+    .Name(textmate.scope.punctuationSectionGroupBegin + scope)
   )
   .End('\\|')
   .EndCapture(
     textmate.capture.new(0)
-    // FIXME: update scope names, figure out what to use
-    .Name(textmate.scope.punctuationSectionBracketsEnd + scope)
+    .Name(textmate.scope.punctuationSectionGroupEnd + scope)
   )
   // Match K/V before initialization character
   .Pattern(textmate.pattern.new().Include(common.id.mapKeyValue))
