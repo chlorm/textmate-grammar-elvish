@@ -37,7 +37,6 @@ local variables = [
   'false',
 ];
 
-// FIXME: decide variable.other.constant or constant.language
 textmate.repository.new(builtinVariables)
 .Pattern(
   textmate.pattern.new()
@@ -51,7 +50,6 @@ textmate.repository.new(builtinVariables)
   .Capture(
     textmate.capture.new(2)
     .Name(textmate.scope.constantLanguage + scope)
-    //.Name(textmate.scope.variableOtherConstant + scope)
   )
 )
 +

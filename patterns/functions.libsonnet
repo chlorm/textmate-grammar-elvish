@@ -27,6 +27,7 @@ local commands = [
   'cd',
   'constantly',
   'count',
+  // FIXME: move to operators
   'del',
   'deprecate',
   'dissoc',
