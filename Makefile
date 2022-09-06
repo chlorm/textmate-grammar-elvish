@@ -18,7 +18,7 @@ test-deps:
 test-deps-install:
 	npm install --global-style vscode-tmgrammar-test
 
-tests: build test-deps
+test: build test-deps
 	$(VSCODE_TMGRAMMAR_TEST_CMD) \
 		--grammar elvish.tmLanguage.json \
 		--scope source.elvish \
