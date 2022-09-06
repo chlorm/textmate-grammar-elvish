@@ -61,3 +61,6 @@ x=all
 
 to-json
 # <------- support.function.elvish
+
+printf
+# <------ support.function.elvish
