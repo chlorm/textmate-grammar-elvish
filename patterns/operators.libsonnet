@@ -99,7 +99,7 @@ textmate.repository.new(keywordOperatorAssignment)
 .Pattern(
   textmate.pattern.new()
   .Match(
-    '(' + operatorCommand(['set', 'var']) + '|' + operatorChar(['='],) + ')'
+    '(' + operatorCommand(['set', 'tmp', 'var']) + '|' + operatorChar(['=']) + ')'
   )
   .Capture(
     textmate.capture.new(1)
